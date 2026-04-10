@@ -1,12 +1,13 @@
-name: second CI
+name: Second Workflow
 
 on:
-    push:
-    
-jobs:
-    build:
-        runs-on: ubuntu-latest
+  push:
+   
 
-        steps:
-            - name: Say Hello
-              run: eco "Hello from the second workflow!"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+     
+      - name: Say Hello
+        run: echo "Hello from the second workflow!"
