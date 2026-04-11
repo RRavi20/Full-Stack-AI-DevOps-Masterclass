@@ -1,8 +1,8 @@
 name: Second Workflow
 
 on:
-  push:
-   
+  #push:
+  workflow_dispatch: 
 
 jobs:
   build:
