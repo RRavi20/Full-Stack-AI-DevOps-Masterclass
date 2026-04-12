@@ -45,6 +45,6 @@ jobs:
           context: docker/app1-hello/python
           push: true      
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/hello-python:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/hello-p:latest
 
       
