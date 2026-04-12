@@ -1,38 +1,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app1-hello
+  name: hello-node-deployment
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: app1-hello
+      app: hello-node
   template:
     metadata:
       labels:
-        app: app1-hello
+        app: hello-node
     spec:
       containers:
-        - name: app1-hello
-          image: rravi20/hello-node:latest
-          env:
-            - name: ENV_VALUE
-              value: "Hello from app.yaml"
-            - name: DB_PASSWORD
-              value: "#R@vi2005"
-          ports:
-            - containerPort: 3000
+      - name: hello-node
+        image: rravi20/hello-node:latest
+        ports:
+        - containerPort: 3000
+
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: app1-hello
+  name: hello-node-service
 spec:
-  selector:
-    app: app1-hello
   type: LoadBalancer
+  selector:
+    app: hello-node
   ports:
     - port: 80
       targetPort: 3000
+
       
