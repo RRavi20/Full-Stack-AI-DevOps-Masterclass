@@ -2,6 +2,10 @@ name: Hello Python App to Docker
 
 on:
   push:
+    branches:
+      - main
+    paths:
+      - "docker/app1-hello/python"
   workflow_dispatch: 
 
 jobs:
@@ -45,6 +49,6 @@ jobs:
           context: docker/app1-hello/python
           push: true      
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/hello-p:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/hello-python:latest
 
       
